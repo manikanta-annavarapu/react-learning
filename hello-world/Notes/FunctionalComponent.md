@@ -1,3 +1,3 @@
 # Functional Component
 
-Example code file 
+Example code file [Greet.js](../src/components/Greet.js)
