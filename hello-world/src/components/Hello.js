@@ -1,5 +1,6 @@
 import React from "react";
 
+// Observe the we are creating and exporting the function directly in a single line this is one way of doing it
 export const Hello = () => {
   const typeToRender = "JSX";
   if (typeToRender === "JSX") {
