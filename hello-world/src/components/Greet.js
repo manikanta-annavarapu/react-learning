@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
 // function Greet(){
-//     return <h1>Hello Mani</h1>;
+//     return <h1>Greet Mani</h1>;
 // }
 
 //Arrow function react component
-const Greet = () => <h1>Hello Mani</h1>
+const Greet = () => <h1>Greet Mani</h1>;
 
 export default Greet;
