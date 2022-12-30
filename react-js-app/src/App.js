@@ -5,6 +5,7 @@ import { Hello } from "./components/Hello";
 import Wel from "./components/Welcome";
 import WelcomeProps from "./props/WelcomeProps";
 import Subscription from "./state/Subscription";
+import Counter from "./state/Counter";
 
 function App() {
   const name = "Mani";
@@ -23,6 +24,8 @@ function App() {
       </WelcomeProps>
 
       <Subscription name={name}></Subscription>
+
+      <Counter id="counter"></Counter>
     </div>
   );
 }

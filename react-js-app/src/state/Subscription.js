@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Subscription extends Component {
   //this is how you get props in constructor
   constructor(props) {
-    super();
+    super(props);
     console.log(props);
     this.state = {
       message: <h1>Welcome {props.name}</h1>,
