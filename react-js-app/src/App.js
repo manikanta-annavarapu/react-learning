@@ -4,6 +4,7 @@ import GreetProps from "./props/GreetProps";
 import { Hello } from "./components/Hello";
 import Wel from "./components/Welcome";
 import WelcomeProps from "./props/WelcomeProps";
+import Subscription from "./state/Subscription";
 
 function App() {
   const name = "Mani";
@@ -20,6 +21,8 @@ function App() {
       <WelcomeProps name={name}>
         <h3>How are you?</h3>
       </WelcomeProps>
+
+      <Subscription name={name}></Subscription>
     </div>
   );
 }
