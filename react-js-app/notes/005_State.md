@@ -6,7 +6,7 @@ Refer to [Subscription.js](./..src/../../src/state/Subscription.js)
 
 You should always use `this.setState({key: value})` like in [Counter.js](./../src/state/Counter.js#L18)
 
-```js
+```jsx
 increment() {
   this.setState({
     count: this.state.count + 1,
