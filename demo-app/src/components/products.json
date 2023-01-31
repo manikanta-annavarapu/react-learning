@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "name": "Tooth Paste",
+      "unitPrice": 10,
+      "quantity": 2
+    },
+    {
+      "name": "Soap",
+      "unitPrice": 35,
+      "quantity": 4
+    },
+    {
+      "name": "Shampoo",
+      "unitPrice": 105,
+      "quantity": 1
+    }
+  ]
+}
