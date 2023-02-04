@@ -5,7 +5,7 @@ const GreetProps = (props) => {
   console.log(props);
   if (wannaBreakApp) {
     console.log("Changing props value...");
-    // application breaks which props values are changed here as props are immutable and readonly here.
+    // application breaks when props values are changed here as props are immutable and readonly here.
     props.name = "John";
     console.log(props);
   }

@@ -8,15 +8,15 @@ class Counter extends Component {
     };
   }
 
-  async incrementAsync() {
-    await this.setState({
+  increment() {
+    this.setState({
       count: this.state.count + 1,
     });
     console.log(this.state.count);
   }
 
-  increment() {
-    this.setState({
+  async incrementAsync() {
+    await this.setState({
       count: this.state.count + 1,
     });
     console.log(this.state.count);
@@ -29,10 +29,17 @@ class Counter extends Component {
     console.log(this.state.count);
   }
 
+  // this will increase only once as React groups multiple setState statement to one single update
   incrementThreeWillNotWork() {
     this.increment();
     this.increment();
     this.increment();
+  }
+
+  async incrementThreeWillWorkWithIncrementAsync() {
+    await this.incrementAsync();
+    await this.incrementAsync();
+    await this.incrementAsync();
   }
 
   incrementThreeWillWork() {
@@ -77,6 +84,12 @@ class Counter extends Component {
         </button>
         <button onClick={() => this.incrementThreeWillNotWork()}>
           Increment Three Will Not Work
+        </button>
+        <button onClick={() => this.incrementThreeWillWorkWithIncrementAsync()}>
+          Increment Three Will Work With Increment Async
+        </button>
+        <button onClick={() => this.incrementSetStateByPassingArrowFunction()}>
+          Increment Count By Passing Arrow Function to SetState
         </button>
         <button onClick={() => this.incrementThreeWillWork()}>
           Increment Three Will Work
