@@ -8,10 +8,54 @@ So the difference is visible when they are imported and utilized, observe how th
 
 ```javascript
 import Greet from "./components/Greet";
-// export function or class should be import with exact names in curly brackets
+// "export" function or class should be import with exact names in curly brackets
 import { Hello } from "./components/Hello";
-// export default function or class can be renamed to your preferred name like below
+// "export default" function or class can be renamed to your preferred name like below
 import Wel from "./components/Welcome";
+```
+
+few more examples [stack overflow reference link](https://stackoverflow.com/questions/43172750/can-you-use-es6-import-alias-syntax-for-react-components)
+
+```javascript
+export default Button;
+
+import Button from "./button";
+const Button = require("./button").default;
+```
+
+```javascript
+export const Button
+
+import { Button } from './button'
+const { Button } = require('./button')
+```
+
+```javascript
+export { Button };
+
+import { Button } from "./button";
+const { Button } = require("./button");
+```
+
+```javascript
+module.exports.Button;
+
+import { Button } from "./button";
+const { Button } = require("./button");
+```
+
+```javascript
+module.exports.Button = Button;
+
+import { Button } from "./button";
+const { Button } = require("./button");
+```
+
+```javascript
+module.exports = Button
+
+import \* as Button from './button'
+const Button = require('./button')
 ```
 
 ---

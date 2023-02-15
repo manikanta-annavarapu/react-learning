@@ -6,9 +6,16 @@ import Wel from "./components/Welcome";
 import WelcomeProps from "./props/WelcomeProps";
 import Subscription from "./state/Subscription";
 import Counter from "./state/Counter";
+import {
+  default as RenamedWishes,
+  Wish as OreoWish,
+} from "./destructuring/Wishes";
+
+import N from "./destructuring/Namaste";
 
 function App() {
   const name = "Mani";
+  const agentCodes = [707, 112];
   return (
     <div className="App">
       <Greet />
@@ -26,6 +33,12 @@ function App() {
       <Subscription name={name}></Subscription>
 
       <Counter id="counter"></Counter>
+      <div style={{ backgroundColor: "#a1a1a1" }}>
+        <h2>Below section is for Destructuring</h2>
+        <RenamedWishes name={name} partOfDay="Morning"></RenamedWishes>
+        <OreoWish name={name} partOfDay="Evening"></OreoWish>
+        <N name={name} agentCodes={agentCodes}></N>
+      </div>
     </div>
   );
 }
