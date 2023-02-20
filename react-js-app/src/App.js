@@ -12,6 +12,9 @@ import {
 } from "./destructuring/Wishes";
 
 import N from "./destructuring/Namaste";
+import FunctionClick from "./eventHandling/FunctionClick";
+import ClassClick from "./eventHandling/ClassClick";
+import ClassEventBinding from "./eventHandling/ClassEventBinding";
 
 function App() {
   const name = "Mani";
@@ -38,6 +41,12 @@ function App() {
         <RenamedWishes name={name} partOfDay="Morning"></RenamedWishes>
         <OreoWish name={name} partOfDay="Evening"></OreoWish>
         <N name={name} agentCodes={agentCodes}></N>
+      </div>
+
+      <div>
+        <FunctionClick></FunctionClick>
+        <ClassClick></ClassClick>
+        <ClassEventBinding></ClassEventBinding>
       </div>
     </div>
   );
