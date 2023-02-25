@@ -9,17 +9,19 @@ class ClassEventBinding extends Component {
     };
   }
 
-  clickHandler() {
+  /*Notice the clickHandler as arrow function in the below line.*/
+  clickHandler = () => {
     this.setState({
       message: "ClassEventBinding Button Clicked",
     });
-  }
+    console.log(this); // this will log class instance object
+  };
 
   render() {
     return (
       <div>
         <h3>{this.state.message}</h3>
-        <button onClick={this.clickHandler}> ClassEventBinding Click</button>
+        <button onClick={this.clickHandler}>ClassEventBinding Click</button>
       </div>
     );
   }
