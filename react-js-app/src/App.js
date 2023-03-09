@@ -15,12 +15,17 @@ import N from "./destructuring/Namaste";
 import FunctionClick from "./eventHandling/FunctionClick";
 import ClassClick from "./eventHandling/ClassClick";
 import ClassEventBinding from "./eventHandling/ClassEventBinding";
+import UserGreeting from "./conditionalRendering/UserGreeting";
 
 function App() {
   const name = "Mani";
   const agentCodes = [707, 112];
   return (
     <div className="App">
+      <div style={{ backgroundColor: "#a2b2c2" }}>
+        <UserGreeting></UserGreeting>
+      </div>
+
       <Greet />
       <Wel />
       <Hello />
