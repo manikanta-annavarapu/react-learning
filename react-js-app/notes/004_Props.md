@@ -57,3 +57,50 @@ class WelcomeProps extends Component {
   }
 }
 ```
+
+## Methods as props
+
+As you know about how to send properties to child component from parent component, likewise we can also pass method (which is defined in the parent) to child component from parent component.
+
+An example is availble in [ParentComponent.js](./../src/props/ParentComponent.js) and [ChildComponent.js](./../src/props/ChildComponent.js).
+
+[ParentComponent.js](./../src/props/ParentComponent.js)
+
+```jsx
+  constructor(props) {
+    super(props);
+    this.state = {
+      parentName: "Parent",
+    };
+
+    this.greetParent = this.greetParent.bind(this); //binding is important
+  }
+
+  greetParent(childName) {
+    alert(`Hello ${this.state.parentName} from ${childName}.`);
+  }
+
+  render() {
+    return (
+      <>
+        <ChildComponent greetHandler={this.greetParent}></ChildComponent>
+      </>
+    );
+  }
+```
+
+[ChildComponent.js](./../src/props/ChildComponent.js)
+
+```jsx
+const ChildComponent = (props) => {
+  return (
+    <div>
+      <button onClick={() => props.greetHandler("Child")}>Click Me</button>
+    </div>
+  );
+};
+```
+
+**As we are passing a method from parent make sure the parent method is binded properly.**
+
+In the Child Component, if at all you need to pass some parameters, use the arrow function syntax like in [ChildComponent.js](./../src/props/ChildComponent.js) at button `onClick` attribute.

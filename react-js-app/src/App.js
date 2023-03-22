@@ -15,6 +15,7 @@ import N from "./destructuring/Namaste";
 import FunctionClick from "./eventHandling/FunctionClick";
 import ClassClick from "./eventHandling/ClassClick";
 import ClassEventBinding from "./eventHandling/ClassEventBinding";
+import ParentComponent from "./props/ParentComponent";
 
 function App() {
   const name = "Mani";
@@ -47,6 +48,11 @@ function App() {
         <FunctionClick></FunctionClick>
         <ClassClick></ClassClick>
         <ClassEventBinding></ClassEventBinding>
+      </div>
+
+      <div>
+        <h2>Below section is for sending methods as props</h2>
+        <ParentComponent></ParentComponent>
       </div>
     </div>
   );
