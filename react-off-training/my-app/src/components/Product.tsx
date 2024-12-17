@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "./Card";
 
 type Props = {
   data: any;
@@ -17,12 +18,12 @@ function Product({ data, btnClick }: Props) {
   };
 
   return (
-    <div style={{ display: "inline-block", margin: "5px" }}>
+    <Card>
       <img src={data.productImage} alt="" />
       <h1>{data.productName}</h1>
       <p>{data.productPrice}</p>
       {renderStock()}
-    </div>
+    </Card>
   );
 }
 
