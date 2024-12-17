@@ -9,7 +9,9 @@ export default function ThemeSwitch({ changeTheme }: Props) {
 
   useEffect(() => {
     // side effect : anywhere where react has control
-    document.body.style.backgroundColor = theme === "light" ? "#fff" : "#333";
+    // document.body.style.backgroundColor = theme === "light" ? "#fff" : "#333";
+    // document.body.setAttribute("data-theme", theme);
+    document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
 
   if (theme === "light") {

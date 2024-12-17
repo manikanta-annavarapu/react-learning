@@ -1,5 +1,12 @@
-import React, { PropsWithChildren } from "react";
+import React, { PropsWithChildren, useContext } from "react";
+import { ThemeContext } from "../context";
 
 export default function Card({ children }: PropsWithChildren) {
-  return <div className="card">{children}</div>;
+  const theme = useContext(ThemeContext);
+  const color = theme === "light" ? "#333" : "#fff";
+  return (
+    <div className="card" style={{ color }}>
+      {children}
+    </div>
+  );
 }
