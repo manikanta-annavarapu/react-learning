@@ -1,19 +1,9 @@
 import Product from "../components/Product";
-import { ProductType } from "../types";
-import { getProductList } from "../services/ProductService";
+import useProducts from "../hooks/useProducts";
 
 function ProductList() {
-  let productList: ProductType[] = [];
-  const fetchData = async () => {
-    try {
-      const response = await getProductList();
-      console.log("Data fetched", response.data);
-      productList = response.data;
-    } catch (error) {
-      console.log("Error fetching data", error);
-    }
-  };
-  fetchData();
+  // let productList: ProductType[] = [];
+  const productList = useProducts();
 
   return (
     <div>

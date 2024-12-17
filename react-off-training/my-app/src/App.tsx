@@ -5,8 +5,9 @@ import ProductList from "./containers/ProductList";
 function App() {
   return (
     <div className="App">
-      <Demo />
+      {/* <Demo /> */}
       <ProductList />
+      {/* <button onClick={}>Click me</button> */}
     </div>
   );
 }
