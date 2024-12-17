@@ -1,40 +1,27 @@
 import React, { useEffect } from "react";
+import useTheme from "../hooks/useTheme";
 
 type Props = {
   changeTheme: (theme: string) => void;
 };
 
 export default function ThemeSwitch({ changeTheme }: Props) {
-  const [theme, setTheme] = React.useState("light");
+  const { bgColor, altTheme } = useTheme();
 
   useEffect(() => {
     // side effect : anywhere where react has control
-    // document.body.style.backgroundColor = theme === "light" ? "#fff" : "#333";
+    document.body.style.backgroundColor = bgColor;
     // document.body.setAttribute("data-theme", theme);
-    document.documentElement.setAttribute("data-theme", theme);
-  }, [theme]);
+    // document.documentElement.setAttribute("data-theme", bgColor);
+  }, [bgColor]);
 
-  if (theme === "light") {
-    return (
-      <button
-        onClick={() => {
-          setTheme("dark");
-          changeTheme("dark");
-        }}
-      >
-        Dark Mode
-      </button>
-    );
-  } else {
-    return (
-      <button
-        onClick={() => {
-          setTheme("light");
-          changeTheme("light");
-        }}
-      >
-        Light Mode
-      </button>
-    );
-  }
+  return (
+    <button
+      onClick={() => {
+        changeTheme(altTheme);
+      }}
+    >
+      Light Mode
+    </button>
+  );
 }

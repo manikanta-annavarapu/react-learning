@@ -12,8 +12,8 @@ function App() {
     <div className="App">
       {/* <Demo /> */}
       {/* <Checkout /> */}
-      <ThemeSwitch changeTheme={(t) => setTheme(t)} />
       <ThemeContext.Provider value={theme}>
+        <ThemeSwitch changeTheme={(t) => setTheme(t)} />
         <ProductList />
       </ThemeContext.Provider>
       {/* <button onClick={}>Click me</button> */}
