@@ -21,7 +21,7 @@ export default function ThemeSwitch({ changeTheme }: Props) {
         changeTheme(altTheme);
       }}
     >
-      Light Mode
+      {altTheme} Mode
     </button>
   );
 }
