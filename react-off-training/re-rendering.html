@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+
+    </ul>
+    <button onclick="loadData()">load</button>
+    <button onclick="refreshData()">refresh</button>
+    <script>
+        function loadData() {
+            displayData(['item 1', 'item 2', 'item 3']);
+        }
+
+        function refreshData() {
+            displayData(['item 1', 'item 2', 'item 3', 'item 4']);
+        }
+        function displayData(data) {
+            let list = document.getElementById('list');
+            list.innerHTML = '';
+            data.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                list.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>

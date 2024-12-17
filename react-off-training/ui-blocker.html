@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="test"> some content</p>
+    <button onclick="changeContent">sone content</button>
+    <script>
+        // Block UI
+        function changeContent() {
+            alert('Blocking UI');
+            document.getElementById('test').innerHTML = 'new content';
+        }
+
+        function changeContent2() {
+            document.getElementById('test').innerHTML = 'new content';
+            alert('Blocking UI');
+        }
+    </script>
+</body>
+</html>
