@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Product from "../components/Product";
 import useProducts from "../hooks/useProducts";
 
@@ -20,4 +21,4 @@ function ProductList() {
   );
 }
 
-export default ProductList;
+export default memo(ProductList);
