@@ -3,8 +3,11 @@ import "./App.css";
 // import Demo from "./Demo";
 import ThemeSwitch from "./components/ThemeSwitch";
 // import Checkout from "./containers/Checkout";
-import ProductList from "./containers/ProductList";
+// import ProductList from "./containers/ProductList";
 import { ThemeContext } from "./context";
+import AppRouter from "./AppRouter";
+import { BrowserRouter } from "react-router-dom";
+import Menu from "./components/Menu";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -18,15 +21,19 @@ function App() {
     <div className="App">
       {/* <Demo /> */}
       {/* <Checkout /> */}
-      <ThemeContext.Provider value={theme}>
-        <ThemeSwitch
-          changeTheme={(t) => {
-            setTheme(t);
-            localStorage.setItem("theme", t);
-          }}
-        />
-        <ProductList />
-      </ThemeContext.Provider>
+      <BrowserRouter>
+        <ThemeContext.Provider value={theme}>
+          <Menu />
+          <ThemeSwitch
+            changeTheme={(t) => {
+              setTheme(t);
+              localStorage.setItem("theme", t);
+            }}
+          />
+          <AppRouter />
+        </ThemeContext.Provider>
+      </BrowserRouter>
+
       {/* <button onClick={}>Click me</button> */}
     </div>
   );
