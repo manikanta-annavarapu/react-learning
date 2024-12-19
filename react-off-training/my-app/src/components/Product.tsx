@@ -1,5 +1,7 @@
 import React from "react";
 import Card from "./Card";
+import { RootState } from "../store";
+import { useSelector } from "react-redux";
 
 type Props = {
   data: any;
@@ -7,6 +9,8 @@ type Props = {
 };
 
 function Product({ data, btnClick }: Props) {
+  // here the state represents the entire store
+  const code = useSelector((state: RootState) => state.currency);
   const renderStock = () => {
     if (data.productStock > 0) {
       return (
@@ -21,7 +25,9 @@ function Product({ data, btnClick }: Props) {
     <Card>
       <img src={data.productImage} alt="" />
       <h1>{data.productName}</h1>
-      <p>{data.productPrice}</p>
+      <p>
+        {code} {data.productPrice}
+      </p>
       {renderStock()}
     </Card>
   );
