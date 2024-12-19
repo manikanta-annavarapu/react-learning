@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@shop-app/event-bus": ["libs/event-bus/src/index.ts"],
       "cart/Module": ["apps/cart/src/remote-entry.ts"],
       "checkout/Module": ["apps/checkout/src/remote-entry.ts"],
       "product/Module": ["apps/product/src/remote-entry.ts"]

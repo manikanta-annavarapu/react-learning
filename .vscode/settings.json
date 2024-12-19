@@ -1,5 +1,11 @@
 {
-  "cSpell.words": ["Namaste", "transpile", "transpiles", "webfonts"],
+  "cSpell.words": [
+    "Namaste",
+    "transpile",
+    "transpiles",
+    "unsubcribe",
+    "webfonts"
+  ],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true
 }

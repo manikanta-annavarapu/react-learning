@@ -10,7 +10,7 @@ const currencySlice = createSlice({
       // action : contains action related information
       // return the updated data to the store
       // payload : any data that needs to be sent to the store
-      console.log("state", state);
+      console.log("redux changeCurrency current state", state); //curent state
       return action.payload;
     },
   },
