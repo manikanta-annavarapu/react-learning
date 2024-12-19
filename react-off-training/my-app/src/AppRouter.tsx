@@ -6,6 +6,7 @@ import ErrorPage from "./containers/ErrorPage";
 import PrivateRoute from "./components/PrivateRoute";
 import ProductDetail from "./components/ProductDetail";
 import { lazy, Suspense } from "react";
+import Login from "./containers/Login";
 
 const LazyProductList = lazy(() => import("./containers/ProductList"));
 
@@ -14,6 +15,7 @@ export default function AppRouter() {
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         <Route path="/" element={<Demo />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/products" element={<LazyProductList />} />
         <Route path="/detail/:pid" element={<ProductDetail />} />
         <Route

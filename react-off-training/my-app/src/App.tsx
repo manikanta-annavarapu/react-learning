@@ -9,8 +9,9 @@ import AppRouter from "./AppRouter";
 import { BrowserRouter } from "react-router-dom";
 import Menu from "./components/Menu";
 import { Provider } from "react-redux";
-import { store } from "./store";
+import { persistor, store } from "./store";
 import Currency from "./components/Currency";
+import { PersistGate } from "redux-persist/integration/react";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -25,19 +26,21 @@ function App() {
       {/* <Demo /> */}
       {/* <Checkout /> */}
       <Provider store={store}>
-        <BrowserRouter>
-          <ThemeContext.Provider value={theme}>
-            <Menu />
-            <Currency />
-            <ThemeSwitch
-              changeTheme={(t) => {
-                setTheme(t);
-                localStorage.setItem("theme", t);
-              }}
-            />
-            <AppRouter />
-          </ThemeContext.Provider>
-        </BrowserRouter>
+        <PersistGate loading={null} persistor={persistor}>
+          <BrowserRouter>
+            <ThemeContext.Provider value={theme}>
+              <Menu />
+              <Currency />
+              <ThemeSwitch
+                changeTheme={(t) => {
+                  setTheme(t);
+                  localStorage.setItem("theme", t);
+                }}
+              />
+              <AppRouter />
+            </ThemeContext.Provider>
+          </BrowserRouter>
+        </PersistGate>
       </Provider>
 
       {/* <button onClick={}>Click me</button> */}

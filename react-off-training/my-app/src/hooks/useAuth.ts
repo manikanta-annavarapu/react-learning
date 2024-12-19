@@ -13,7 +13,8 @@ export default function useAuth() {
     try {
       const data = { email, password };
       const url = "";
-      const res = await Axios.post(url, data);
+      //   const res = await Axios.post(url, data);
+      const res = { data: { email: email } };
       dispatch(setUserSession(res.data));
       navigate("/");
     } catch (err) {
